@@ -22,7 +22,76 @@ The library expects a structure like so :
 ```
 /lang
         /en
-            messages.php
+            messages.json
         /es
-            messages.php
+            messages.json
 ```
+
+Every file in those folders will be parsed and assigned to an object like so : messages.myTranslationVariable
+The first part is always the filename and the second your variable.
+
+## Usage
+check [the examples folder](https://github.com/mbouclas/mcms-node-localization/tree/master/exapmples) for usage scenarios
+Initialize like so :
+```
+var Lang = require('mcms-node-localization');
+var locales = ['en','de']; //assuming you have 2 languages
+var t = new Lang({
+    directory : __dirname + '/locales',
+    locales : locales
+});
+```
+then add the translations
+
+```
+t.add();
+```
+
+### Translate using named parameters
+```
+console.log(t.get('messages.weekend',{name : 'Michael',surname : 'Bobos'}));
+```
+
+### Translate using arguments
+```
+console.log(t.get('messages.tree','bob','john'));
+```
+
+### Pluralize
+```
+console.log(t.choice('messages.cat',2,{name : 'Michael',surname : 'bobos'}));//using named parameters
+console.log(t.choice('messages.cat',1,'is enough'));//using arguments
+```
+
+### Add new translations at a later stage from a different location
+```
+t.add({
+    directory : __dirname + '/additionalLocales',
+    locales : locales
+},function(err,translations){
+    console.log(t.get('msg.Hello',{name : 'Michael',surname : 'bobos'}));
+});
+```
+
+
+## API
+
+### add(options,callback)
+where options :
+```
+{
+    directory : __dirname + '/additionalLocales',
+    locales : locales
+}
+```
+
+### get(translationVariable,optionalArguments)
+Where optionalArgument could be an object with named parameters or actual parameters. We are making use of sprintf so
+if you go for the parameters option make sure they are of the right type.
+
+### choice(translationVariable,count,optionalArguments)
+Count is a number that will output the singular or plural option of the translation variable.
+Where optionalArgument could be an object with named parameters or actual parameters. We are making use of sprintf so
+if you go for the parameters option make sure they are of the right type.
+
+
