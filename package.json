@@ -1,7 +1,7 @@
 {
   "name": "mcms-node-localization",
   "description": "mcms node localization module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "mcms",
     "localization"
@@ -15,6 +15,14 @@
   "directories": {
     "lib": "./lib/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbouclas/mcms-node-localization"
+  },
+  "bugs": {
+    "url": "https://github.com/mbouclas/mcms-node-localization/issues"
+  },
+  "readmeFilename": "readme.md",
   "main": "./lib/index",
   "dependencies": {
     "lodash": "~2.4.1",

@@ -5,7 +5,7 @@ localization module for mcms-node
 
 ## What does it do
 This package allows you to add localization files to your Node project. You can store the localization files in
-different directories and add them asynchronously as needed. You can uses it as a standalone library or in conjunction
+different directories and add them asynchronously as needed. You can use it as a standalone library or in conjunction
 with a framework like Express.
 
 ## Why another localization library
