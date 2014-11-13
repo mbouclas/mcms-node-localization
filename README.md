@@ -94,4 +94,28 @@ Count is a number that will output the singular or plural option of the translat
 Where optionalArgument could be an object with named parameters or actual parameters. We are making use of sprintf so
 if you go for the parameters option make sure they are of the right type.
 
+### inject(translationVariable,value)
+Inject an object to an existing translation. You can either inject the full blown object like so :
+```
+var newTranslation = {
+    en : {
+        focus : 'Daniel san EN'
+    },
+    de : {
+        focus : 'Daniel san DE'
+    }
+};
+t.inject('tester',newTranslation);
+```
 
+or just a single variable like so :
+```
+var newTranslation2 = {
+    en : 'bob EN',
+    de : 'bob DE'
+};
+
+t.inject('tester.name',newTranslation2);
+```
+
+This method is especially useful if you want to load translations from a DB instead from the disk

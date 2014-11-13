@@ -23,3 +23,22 @@ t.add({
 });
 console.log(t.choice('messages.cat',2,{name : 'Michael',surname : 'Bouclas'}));
 console.log(t.choice('messages.cat',1,'is enough'));
+
+var newTranslation = {
+    en : {
+        focus : 'Daniel san EN'
+    },
+    de : {
+        focus : 'Daniel san DE'
+    }
+};
+
+var newTranslation2 = {
+    en : 'bob EN',
+    de : 'bob DE'
+};
+
+t.inject('tester',newTranslation);
+console.log(t.get('tester.focus'));
+t.inject('tester.name',newTranslation2);
+console.log(t.get('tester.name'));
