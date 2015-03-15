@@ -31,7 +31,7 @@ Every file in those folders will be parsed and assigned to an object like so : m
 The first part is always the filename and the second your variable.
 
 ## Usage
-check [the examples folder](https://github.com/mbouclas/mcms-node-localization/tree/master/exapmples) for usage scenarios
+check [the examples folder](https://github.com/mbouclas/mcms-node-localization/tree/master/examples) for usage scenarios
 Initialize like so :
 ```
 var Lang = require('mcms-node-localization');
