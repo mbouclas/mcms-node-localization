@@ -1,10 +1,11 @@
 {
   "name": "mcms-node-localization",
   "description": "mcms node localization module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
     "mcms",
-    "localization"
+    "localization",
+    "translations"
   ],
   "license": "MIT",
   "author": {
