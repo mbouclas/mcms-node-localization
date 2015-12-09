@@ -1,7 +1,7 @@
 {
   "name": "mcms-node-localization",
   "description": "mcms node localization module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "keywords": [
     "mcms",
     "localization",
